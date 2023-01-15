@@ -2,7 +2,7 @@ name: Angular GitHub CI/CD
 
 permissions:
   contents: write
-  
+
 on:
   push:
     branches:
@@ -71,10 +71,8 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Deploy 🚀
+        if: success()
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target_branch: gh-pages
-          build_dir: dist/app-name
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: dist/app-name # The folder the action should deploy.

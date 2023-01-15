@@ -54,7 +54,6 @@ jobs:
 
       - name: Create Release
         uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB_ACTION }}
         with:
@@ -62,6 +61,10 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Deploy
-        run: |
-          npm run deploy
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: dist/app-name
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -72,4 +72,3 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: "dist/app-name" # The folder the action should deploy.
-          target-folder: "docs"

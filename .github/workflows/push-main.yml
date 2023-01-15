@@ -42,7 +42,7 @@ jobs:
           npm ci
       - name: Build
         run: |
-          npm run build:prod
+          npm run build
       - name: Lint
         run: |
           npm run lint
@@ -71,4 +71,5 @@ jobs:
         if: success()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/app-name # The folder the action should deploy.
+          folder: "dist/app-name" # The folder the action should deploy.
+          target-folder: "docs"

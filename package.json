@@ -1,7 +1,7 @@
 {
   "name": "app-name",
   "version": "0.0.0",
-  "homepage": "https://yevheniibez.github.io/ci-cd",
+  "homepage": "https://yevheniibez.github.io",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

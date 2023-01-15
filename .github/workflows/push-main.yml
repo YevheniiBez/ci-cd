@@ -52,12 +52,20 @@ jobs:
           github-token: ${{ secrets.TOKEN_GITHUB_ACTION }}
           output-file: "false"
 
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v4
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          title: ${{ steps.changelog.outputs.tag }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3

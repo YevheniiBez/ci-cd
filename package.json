@@ -10,7 +10,7 @@
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "deploy": "ng deploy --base-href=https://yevheniibez.github.io/ci-cd/"
+    "deploy": "ng deploy --no-silent --base-href=https://yevheniibez.github.io/ci-cd/"
   },
   "private": true,
   "dependencies": {

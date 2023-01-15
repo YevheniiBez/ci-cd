@@ -1,16 +1,17 @@
 {
   "name": "app-name",
   "version": "0.0.0",
+  "homepage": "https://yevheniibez.github.io/ci-cd/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --base-href http://www.ybezeha-test1.com/",
+    "build:prod": "ng build --base-href https://yevheniibez.github.io/ci-cd/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "deploy": "ng deploy --no-silent --base-href=http://www.ybezeha-test1.com/"
+    "deploy": "ng deploy --no-silent --base-href=https://yevheniibez.github.io/ci-cd/"
   },
   "private": true,
   "dependencies": {

@@ -52,14 +52,12 @@ jobs:
           github-token: ${{ secrets.TOKEN_GITHUB_ACTION }}
           output-file: "false"
 
-      - name: Create Release
-        uses: actions/create-release@v1
+      - name: Create a Release
+        uses: elgohr/Github-Release-Action@v4
         env:
-          token: ${{ secrets.TOKEN_GITHUB_ACTION }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+          title: ${{ steps.changelog.outputs.tag }}
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
